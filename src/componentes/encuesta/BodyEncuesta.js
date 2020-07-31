@@ -35,7 +35,7 @@ class BodyEncuesta extends Component {
             console.log('estado = ' + datos.estado);
             if (datos.estado) {
                // const datosEncuesta = datos.data.map();
-                 const datosEncuesta = datos.data[9];
+                 const datosEncuesta = datos.data[0];
                 this.setState({
                     objEncuesta: {
                         ...this.state.objEncuesta,

@@ -12,7 +12,7 @@ async function request(method, url, body, upload){
             }// Se envían datos formateados en JSON
         }
         
-        //Solo si el método no es GET se incluye al body 
+        //Si el método es GET entonces no se le incluye body
         if(method.toUpperCase() !== 'GET' && !upload){
             requestOptions.body = JSON.stringify(body);
         }
@@ -24,8 +24,6 @@ async function request(method, url, body, upload){
         console.log("request ==== " + requestOptions.body)
         const response = await fetch(`${urlApi}/${url}`,requestOptions);//Se crea la petición al Backend con la ruta, el método y la solicitud
         
-
-
         //Se obtiene la respuesta y se transforma en JSON
         const datos = await response.json();
         console.log(datos);
