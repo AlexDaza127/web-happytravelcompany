@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import DataTableComponent from '../funciones/DataTableComponent';
 import { api } from '../../conexion/api';
 
 
@@ -6,18 +7,34 @@ class BodyEncuesta extends Component {
     constructor(props) {
         super(props);
         this.state = { // inicializando states en el constructor
-            objEncuesta: {}
+            datos: [{}],
+            columnas: [
+                {
+                    text: 'ID',
+                    dataField: 'idEncuesta'
+                },
+                {
+                    text: 'Estrellas',
+                    dataField: 'nEstrella'
+                },
+                {
+                    text: 'Observaciones',
+                    dataField: 'observaciones'
+                }
+            ]
         };
     }
 
-    async componentDidUpdate(prevProps) {
-        //Se comparan los props para identificar la actualización de los datos y no se vuelva un bucle infinito
-        if (this.props.idEncuesta !== prevProps.idEncuesta) {
-            this.traerDetallesEncuestas();
-        }
-    }
+    // async componentDidUpdate(prevProps) {
+    //     //Se comparan los props para identificar la actualización de los datos y no se vuelva un bucle infinito
+    //     if (this.props.idEncuesta !== prevProps.idEncuesta) {
+    //         this.traerDetallesEncuestas();
+    //     }
+    // }
 
-    async componentDidMount(){
+    //Función propia de React que se ejecuta una vez el método render monta el componente
+    async componentDidMount() {
+        //Una vez montado el componente se llaman los datos
         await this.traerDetallesEncuestas();
     }
 
@@ -32,21 +49,15 @@ class BodyEncuesta extends Component {
             const datos = await api('GET', 'consultarEncuestas');
 
             //Si la petición fue exitosa guardar los datos de las encuestas con el método ..spread
-            console.log('estado = ' + datos.estado);
+            console.log('estado ======= ' + datos.estado)
             if (datos.estado) {
-               // const datosEncuesta = datos.data.map();
-                 const datosEncuesta = datos.data[0];
+                const datosEncuesta = datos.data;
                 this.setState({
-                    objEncuesta: {
-                        ...this.state.objEncuesta,
-                        ...datosEncuesta
-                    }
+                    datos: datosEncuesta
                 });
-                
             } else {
                 alert('No fue posible traer datos de las encuestas');
             }
-            
 
         } catch (error) {
             alert('Error en servidor');
@@ -56,29 +67,13 @@ class BodyEncuesta extends Component {
     render() {
         return (
             <Fragment>
-                <h1>Esta es una tabla con los datos de las encuestas</h1>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>idEncuesta</th>
-                            <td>
-                                {this.state.objEncuesta.idEncuesta}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Estrellas</th>
-                            <td>
-                                {this.state.objEncuesta.nEstrellas}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Observaciones</th>
-                            <td>
-                                {this.state.objEncuesta.Observaciones}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h4 align="center "> Tabla Encuestas</h4>
+                <DataTableComponent
+                    columnas={this.state.columnas}
+                    datos={this.state.datos}
+                    idTabla="idEncuesta"
+                />
+
             </Fragment>
         );
     }

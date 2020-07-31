@@ -20,8 +20,9 @@ async function request(method, url, body, upload){
         //Se realiza la petición al Backend
         console.log("url === " + url);
         console.log("urlApi === " + urlApi);
-        console.log("fetch = " + `${urlApi}/${url}`+","+ requestOptions);
+        //console.log("fetch = " + `${urlApi}/${url}`+","+ requestOptions);
         console.log("request ==== " + requestOptions.body)
+        
         const response = await fetch(`${urlApi}/${url}`,requestOptions);//Se crea la petición al Backend con la ruta, el método y la solicitud
         
         //Se obtiene la respuesta y se transforma en JSON
