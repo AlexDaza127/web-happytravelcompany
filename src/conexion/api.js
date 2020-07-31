@@ -7,26 +7,28 @@ async function request(method, url, body, upload){
         //Opciones de petición
         const requestOptions = {
             method: method, // método GET, POST, PUT, DELETE
-            header: {
+            headers: {
                 'Content-Type': 'application/json'
             }// Se envían datos formateados en JSON
         }
         
-        //Si no es el método GET se incluye a body 
+        //Solo si el método no es GET se incluye al body 
         if(method.toUpperCase() !== 'GET' && !upload){
             requestOptions.body = JSON.stringify(body);
-        }else{
-            //Cuando está activada la carga de archivos se debe eliminar el Content-Type
-            delete requestOptions.header['Content-Type'];
-            requestOptions.body = body;
         }
 
         //Se realiza la petición al Backend
+        console.log("url === " + url);
+        console.log("urlApi === " + urlApi);
         console.log("fetch = " + `${urlApi}/${url}`+","+ requestOptions);
-        const response = await fetch(`${urlApi}/${url}`, requestOptions);//Se crea la petición al Backend con la ruta, el método y la solicitud
+        console.log("request ==== " + requestOptions.body)
+        const response = await fetch(`${urlApi}/${url}`,requestOptions);//Se crea la petición al Backend con la ruta, el método y la solicitud
+        
+
 
         //Se obtiene la respuesta y se transforma en JSON
         const datos = await response.json();
+        console.log(datos);
         return datos;
     }catch(error){
         console.log('este es el error = ' + error);

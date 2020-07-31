@@ -6,10 +6,7 @@ class BodyEncuesta extends Component {
     constructor(props) {
         super(props);
         this.state = { // inicializando states en el constructor
-            objEncuesta: {},
-            idEncuesta: '',
-            nEstrellas: '',
-            Observaciones: ''
+            objEncuesta: {}
         };
     }
 
@@ -18,6 +15,10 @@ class BodyEncuesta extends Component {
         if (this.props.idEncuesta !== prevProps.idEncuesta) {
             this.traerDetallesEncuestas();
         }
+    }
+
+    async componentDidMount(){
+        await this.traerDetallesEncuestas();
     }
 
     async traerDetallesEncuestas() {
@@ -31,17 +32,21 @@ class BodyEncuesta extends Component {
             const datos = await api('GET', 'consultarEncuestas');
 
             //Si la petición fue exitosa guardar los datos de las encuestas con el método ..spread
+            console.log('estado = ' + datos.estado);
             if (datos.estado) {
-                const datosEncuesta = datos.data[0];
+               // const datosEncuesta = datos.data.map();
+                 const datosEncuesta = datos.data[9];
                 this.setState({
                     objEncuesta: {
                         ...this.state.objEncuesta,
                         ...datosEncuesta
                     }
                 });
+                
             } else {
                 alert('No fue posible traer datos de las encuestas');
             }
+            
 
         } catch (error) {
             alert('Error en servidor');
@@ -51,6 +56,7 @@ class BodyEncuesta extends Component {
     render() {
         return (
             <Fragment>
+                <h1>Esta es una tabla con los datos de las encuestas</h1>
                 <table>
                     <tbody>
                         <tr>
@@ -69,12 +75,6 @@ class BodyEncuesta extends Component {
                             <th>Observaciones</th>
                             <td>
                                 {this.state.objEncuesta.Observaciones}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>idEncuesta</th>
-                            <td>
-                                {this.state.objEncuesta.idEncuesta}
                             </td>
                         </tr>
                     </tbody>
