@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #fffefe;
+    padding: 20px;
+    padding-bottom: 0px;
+    text-align: right;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #F6881A;
+    border-bottom-style: solid;
+  }
+
+  .cabecera{
+    display: flex;
+    background-color: #fffefe;
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: #F6881A;
+    margin: 0px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  .rutasPage{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    margin: 10px;
+  }
+
+  /* componente home */
+  .fotos{
+    border-radius: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+  }
+
+  .parrafos{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    position: absolute;
+    top: 20%;
+  }
+  
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+    float: left;
+    width: 20%;
+    height: 600px; /* only for demonstration, should be removed */
+    background: rgb(201, 197, 185);
+    padding: 20px;
+  }
+  
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 300px; /* only for demonstration, should be removed */
+  }
+  
+  /* Clear floats after the columns */
+  /* section:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+  
+  /* Style the footer */
+  footer {
+    background-color: #F6881A;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+  @media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: 200%;
+    }
+  }
