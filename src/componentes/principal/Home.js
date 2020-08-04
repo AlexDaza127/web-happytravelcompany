@@ -17,23 +17,43 @@ class Home extends Component {
     render() {
         return (
             <Fragment>
-                <div className='row mx-0'>
-                    <div className='d-flex align-items-center col-5 '>
-                        <img className='fotos' src={cab3} alt="cabaña3" width='90%' height='80%'/>
-                    </div>
-                    <div className='col-5 py-4'>
-                        <div className='row'>
-                            <img className='fotos' src={cab2} alt="cabaña2" width='50%' />
-                            <img className='fotos' src={cas1} alt="casa1" width='50%' />
+                <div className='row mx-0 pt-4'>
+                    <div className='row mx-0 centrar'>
+
+                        <div className='contener'>
+                            <div className='col-8'>
+                                <img className='fotos' src={cab3} alt="cabaña3" width='100%' />
+                                <div className='overlay'>
+                                    <p className='text-light pt-5'>Bienvenido a Viaje Feliz</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className='row '>
-                            <img className='fotos' src={cab1} alt="cabaña1" width='50%' />
-                            <img className='fotos' src={cas2} alt="casa2" width='50%' />
-                        </div>
-                    </div>
-                    <div className='col-2 d-flex align-content-center justify-content-center'>
-                        <p className='parrafos p-3'>Viajes a los mejores lugares de Colombia, sea adentro a afuera de las ciudades mas hermosas.<br/><br/>¡Precios a la medida!</p>
+
                         
+                        <div className='col-sm'>
+                            <p className=''>Viajes a los mejores lugares de Colombia, sea adentro o afuera de las ciudades mas hermosas.<br /><br />¡Precios a la medida!</p>
+                        </div>
+                    </div>
+
+                    <div className='row mx-0'>
+                        <div className='row mx-0' >
+                            
+                            <div className='col-6'>
+                                <img className='fotos' src={cab2} alt="cabaña2" width='100%' />
+                            </div>
+
+                            <div className='col-6'>
+                                <img className='fotos' src={cab1} alt="cabaña2" width='100%' />
+                            </div>
+                        </div>
+                        <div className='row mx-0' >
+                            <div className='col-6'>
+                                <img className='fotos' src={cas1} alt="cabaña1" width='100%' />
+                            </div>
+                            <div className='col-6'>
+                                <img className='fotos' src={cas2} alt="cabaña1" width='100%' />
+                            </div>
+                        </div>
                     </div>
 
                 </div>

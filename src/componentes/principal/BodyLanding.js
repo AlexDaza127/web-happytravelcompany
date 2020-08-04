@@ -25,6 +25,7 @@ class BodyLanding extends Component {
                 show: dato
         })
     }
+    
     render() {
         if (this.state.show === 'home') {
             this.componente = <Home/>
