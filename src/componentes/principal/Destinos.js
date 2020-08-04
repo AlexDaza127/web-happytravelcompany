@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 
 //imagenes importadas
-import cab1 from '../../imagenes/cabañas1.jpg';
-import cab2 from '../../imagenes/cabañas2.jpg';
-import cab3 from '../../imagenes/cabañas3.jpg';
-import cas1 from '../../imagenes/casas1.jpg';
-import cas2 from '../../imagenes/casas2.jpg';
+import cab from '../../imagenes/cab.jpg';
+import cabMasc from '../../imagenes/cabañamascotas.jpg';
+import cabFest from '../../imagenes/cabañasfestival.jpg';
+import casFam from '../../imagenes/casasfamilia.jpg';
+import casNiños from '../../imagenes/casasniños.jpg';
+import cas from '../../imagenes/casasdest.jpg';
 
 import '../../estilos/BodyLanding.css';
 
@@ -18,25 +19,16 @@ class Destinos extends Component {
     }
     render() {
         return (
-            <div className='row'>
-                <div className='row'>
-                    <div className='col-7'>
-                        <img className='' src={cab3} alt="cabaña3" width='30%' />
-                    </div>
-                    <div className='col-5'>
-                        <img className='' src={cab2} alt="cabaña3" width='30%' />
-                        <img className='' src={cab1} alt="cabaña3" width='30%' />
-                    </div>
+            <div className='row mx-0'>
+                <div className='row mx-0 centrar'>
+                        <img className='fotos' src={cab} alt="cabaña" width='80%' />
+                        <img className='fotos' src={cabMasc} alt="cabaña con mascotas" width='50%' />
+                        <img className='fotos' src={cabFest} alt="cabañas en festival" width='50%' />
                 </div>
-                <div className='row'>
-                    <div className='col-5 d-flex'>
-
-                        <img className='' src={cab2} alt="cabaña3" width='30%' />
-                        <img className='' src={cab3} alt="cabaña3" width='30%' />
-                    </div>
-                    <div className='col-7'>
-                        <img className='' src={cab1} alt="cabaña3" width='30%' />
-                    </div>
+                <div className='row mx-0 centrar'>
+                        <img className='fotos' src={casFam} alt="casas familiares" width='50%' />
+                        <img className='fotos' src={casNiños} alt="casas con niños" width='50%' />
+                        <img className='fotos' src={cas} alt="casas" width='80%' />
                 </div>
             </div>
         );

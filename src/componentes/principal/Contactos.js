@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 //imagenes importadas
-import cab1 from '../../imagenes/cabañas1.jpg';
-import cab2 from '../../imagenes/cabañas2.jpg';
-import cab3 from '../../imagenes/cabañas3.jpg';
-import cas1 from '../../imagenes/casas1.jpg';
-import cas2 from '../../imagenes/casas2.jpg';
+import ofi from '../../imagenes/ofi.jpeg';
+import reg from '../../imagenes/reg.jpg';
+import famfeliz from '../../imagenes/famfeliz.jpg';
 
 import '../../estilos/BodyLanding.css';
 
@@ -16,30 +14,28 @@ class Conctactos extends Component {
     }
     render() {
         return (
-            <div className='row'>
-                <div className='row'>
-                    <div className='col-7'>
-                        <img className='' src={cab3} alt="cabaña3" width='30%' />
+            <div className='row mx-0'>
+                <div className='row mx-0 centrar'>
+                    <div className='col-6'>
+                        <img className='fotos' src={ofi} alt="oficinas viaje feliz" width='100%' />
                     </div>
-                    <div className='col-5'>
-                        <p className='parrafos p-3'>Viajes a los mejores lugares de Colombia, sea adentro a afuera de las ciudades mas hermosas.<br /><br />¡Precios a la medida!</p>
-
+                    <div className='col-6'>
+                        <p className=''>¿Quieres conocer mas sobre nuestros servicio? <br />Contáctanos
+                        <br /> Contactos: 3139876543<br />Dirección: Kr 45 # 65 - 78</p>
                     </div>
                 </div>
-                <div className='row'>
-                    <div className='col-5 d-flex'>
-
-                        <img className='' src={cab2} alt="cabaña3" width='30%' />
-                        <p className='parrafos p-3'>Viajes a los mejores lugares de Colombia, sea adentro a afuera de las ciudades mas hermosas.<br /><br />¡Precios a la medida!</p>
-
+                <div className='row mx-0 centrar'>
+                    <div className='col-6' >
+                        <p className='centrar'>Viajes a los mejores lugares de Colombia</p>
                     </div>
-                    <div className='col-7'>
-                        <div className='col-6'>
-                            <img className='' src={cab1} alt="cabaña3" width='30%' />
-                        </div>
-                        <div className='col-6'>
-                            <p className='parrafos p-3'>Viajes a los mejores lugares de Colombia, sea adentro a afuera de las ciudades mas hermosas.<br /><br />¡Precios a la medida!</p>
-                        </div>
+                    <div className='col-6' >
+                        <img className='fotos' src={reg} alt="regiones viaje feliz" width='100%' />
+                    </div>
+                    <div className='col-6' >
+                        <img className='fotos' src={famfeliz} alt="familias felices" width='100%' />
+                    </div>
+                    <div className='col-6' >
+                        <p className='centrar'>Regístrate gratis y conoce mas sobre los inmuebles que ofrecemos</p>
                     </div>
                 </div>
             </div>

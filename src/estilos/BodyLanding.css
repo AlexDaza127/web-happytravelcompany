@@ -40,23 +40,43 @@
     margin: 10px;
   }
 
-  /* componente home */
   .fotos{
     border-radius: 30px;
     padding: 5px;
-    display: flex;
-    justify-content: end;
   }
 
-  .parrafos{
+  .centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  p{
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     font-weight: 500;
-    position: absolute;
-    top: 20%;
   }
+
+  .overlay {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    left: 5%;
+    background-color: #cacaca70;
+    overflow: hidden;
+    width: 90%;
+    height: 0;
+    transition: .5s ease;
+    border-radius: 30px;
+  }
+  
+  .contener:hover .overlay {
+    height: 30%;
+  }
+
   
   /* Create two columns/boxes that floats next to each other */
   nav {
