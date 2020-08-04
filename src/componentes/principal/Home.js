@@ -30,7 +30,7 @@ class Home extends Component {
                         </div>
 
                         
-                        <div className='col-4 col-sm'>
+                        <div className='col-sm'>
                             <p className=''>Viajes a los mejores lugares de Colombia, sea adentro o afuera de las ciudades mas hermosas.<br /><br />¡Precios a la medida!</p>
                         </div>
                     </div>
