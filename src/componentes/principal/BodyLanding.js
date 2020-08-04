@@ -3,6 +3,10 @@ import '../../estilos/BodyLanding.css';
 import Cabecera from '../principal/Cabecera';
 import BodyGrid from '../principal/BodyGrid';
 
+// componentes
+
+
+
 class BodyLanding extends Component {
     constructor(props) {
         super(props);
@@ -10,13 +14,14 @@ class BodyLanding extends Component {
 
     }
     render() {
+        
         return (
             <Fragment>
                 <header>
                     <Cabecera></Cabecera>
                 </header>
                 <section className='mx-0'>
-                    <BodyGrid></BodyGrid>
+                    <BodyGrid show=''></BodyGrid>
                 </section>
             </Fragment>
         );
