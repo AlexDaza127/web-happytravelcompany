@@ -15,7 +15,7 @@ class BodyLanding extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show:'home'
+            show:'usuarios'
         }
         this.navPortal = this.navPortal.bind(this);
     }
