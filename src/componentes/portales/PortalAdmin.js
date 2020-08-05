@@ -1,17 +1,9 @@
-import React, { Fragment, Component } from 'react';
+import React, {Fragment, Component } from 'react';
 import '../../estilos/BodyLanding.css';
 import logo from '../../imagenes/logo.png';
 import iconUser from '../../imagenes/iconusuario.png';
 
-// componentes
-import Home from '../principal/Home';
-import Destinos from '../principal/Destinos';
-import Contactos from '../principal/Contactos';
-import Usuarios from '../principal/Usuarios';
-
-
-
-class BodyLanding extends Component {
+class PortalAdmin extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,16 +20,16 @@ class BodyLanding extends Component {
     
     render() {
         if (this.state.show === 'home') {
-            this.componente = <Home/>
+            //this.componente = <Home/>
         }
         else if (this.state.show === 'destinos') {
-            this.componente = <Destinos />
+            //this.componente = <Destinos />
         }
         else if (this.state.show === 'contactos') {
-            this.componente = <Contactos />
+            //this.componente = <Contactos />
         }
         else if (this.state.show === 'usuarios') {
-            this.componente = <Usuarios />
+            //this.componente = <Usuarios />
         }
         return (
             
@@ -59,12 +51,12 @@ class BodyLanding extends Component {
                         </div>
                     </div>
                 </header>
-                <section>
-                        {this.componente}
+                <section className='mx-0'>
+                        {/* {this.componente} */}
                 </section>
             </Fragment>
         );
     }
 }
-
-export default BodyLanding;
+ 
+export default PortalAdmin;
