@@ -77,12 +77,12 @@ class LoginRegistro extends Component {
                         </div>
                         <div className='espacio centrar'>
                             <input className='bordear py-2 m-0 border-1 px-5' value={this.state.telUno}
-                                onChange={this.handleChangeLogin} type="text"
+                                onChange={this.handleChangeLogin} type="tel"
                                 name='telUno' placeholder='Digite su 1- Teléfono' required></input>
                         </div>
                         <div className='espacio centrar'>
                             <input className='bordear py-2 m-0 border-1 px-5' value={this.state.telDos}
-                                onChange={this.handleChangeLogin} type="text"
+                                onChange={this.handleChangeLogin} type="tel"
                                 name='telDos' placeholder='Digite su 2- Teléfono'></input>
                         </div>
                     </div>

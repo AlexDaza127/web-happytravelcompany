@@ -9,7 +9,7 @@ class Usuarios extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            show: 'propietario'
+            show: 'registro'
          }
     }
 
@@ -32,7 +32,7 @@ class Usuarios extends Component {
         }
 
         return ( 
-            <div>
+            <div >
                 {this.componente}
             </div>
          );
