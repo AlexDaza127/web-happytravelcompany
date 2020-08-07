@@ -50,9 +50,9 @@ class BodyLanding extends Component {
                             <h2 className='pt-4 ml-3'>Los mejores alquileres a los mejores precios</h2>
                         </div>
                         <div className='d-flex flex-row-reverse align-items-end col-sm'>
-                            <a onClick={() => this.navPortal('contactos')}className='rutasPage mr-0 text-dark'>Contactos</a>
-                            <a onClick={() => this.navPortal('destinos')} className=' rutasPage mx-3 text-dark'>Destinos</a>
-                            <a onClick={() => this.navPortal('home')} className='rutasPage mx-3 text-dark'>Home</a>
+                            <button onClick={() => this.navPortal('contactos')}className='rutasPage mr-0 text-dark'>Contactos</button>
+                            <button onClick={() => this.navPortal('destinos')} className=' rutasPage mx-3 text-dark'>Destinos</button>
+                            <button onClick={() => this.navPortal('home')} className='rutasPage mx-3 text-dark'>Home</button>
                         </div>
                         <div className='d-flex align-items-center col-1'>
                             <a onClick={() => this.navPortal('usuarios')} className='pb-3'><img src={iconUser} alt="logo" width='80%'></img></a>

@@ -17,17 +17,17 @@ async function request(method, url, body, upload){
             requestOptions.body = JSON.stringify(body);
         }
 
-        //Se realiza la petición al Backend
-        console.log("url === " + url);
-        console.log("urlApi === " + urlApi);
-        //console.log("fetch = " + `${urlApi}/${url}`+","+ requestOptions);
-        console.log("request ==== " + requestOptions.body)
+        // //Se realiza la petición al Backend
+        // console.log("url === " + url);
+        // console.log("urlApi === " + urlApi);
+        // //console.log("fetch = " + `${urlApi}/${url}`+","+ requestOptions);
+        //console.log("request ==== " + requestOptions.body)
         
         const response = await fetch(`${urlApi}/${url}`,requestOptions);//Se crea la petición al Backend con la ruta, el método y la solicitud
         
         //Se obtiene la respuesta y se transforma en JSON
         const datos = await response.json();
-        console.log(datos);
+        console.log({datos});
         return datos;
     }catch(error){
         console.log('este es el error = ' + error);

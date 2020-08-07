@@ -1,0 +1,47 @@
+#lineSelect {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0%;
+    padding-bottom: 1%;
+    justify-content: center;
+}
+
+#lineSelect div {
+    margin-right: 20px;
+}
+
+.boton {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-style: italic;
+    background: #F6881A;
+}
+
+.tituloModal {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+#tamañoModalHeader {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+h3{
+    font-size: 20px;
+    border-left: #ffffff;
+    border-top: #ffffff;
+    border-right: #ffffff;
+    
+    border-bottom: rgb(112, 112, 112);
+    border-style: solid;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+.espacioPerfil{
+     padding-top: 20%;
+}

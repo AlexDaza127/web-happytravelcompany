@@ -45,7 +45,7 @@ class LoginPropietario extends Component {
 
     render() {
         return (
-            <form className='bordear row mx-0 p-5 needs-validation d-flex flex-wrap align-items-center justify-content-center' onSubmit={this.formResponse}>
+            <form className='bordear row ml-4 mx-0 p-5 needs-validation d-flex flex-wrap align-items-center justify-content-center' onSubmit={this.formResponse}>
                 <div className=' col-sm-4'>
 
                     <div className='espacio centrar'>
@@ -117,7 +117,7 @@ class LoginPropietario extends Component {
                 <div className=' col-sm-4'>
                     <img src={iconFoto} alt="Fotos casas" width='50%' />
                     <div className='espacio centrar' >
-                        <input className='bordear py-2 m-0 border-1 px-5' type="file" id="myfile" name="foto" multiple
+                        <input className='py-2 m-0 border-1 px-5' type="file" id="myfile" name="foto" multiple
                             value={this.state.foto}
                             onChange={this.handleChangeLogin}></input><br></br>
 

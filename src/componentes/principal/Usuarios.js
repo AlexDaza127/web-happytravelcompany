@@ -9,7 +9,7 @@ class Usuarios extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            show: 'registro'
+            show: 'login'
          }
     }
 

@@ -1,15 +1,36 @@
 import React, {Fragment, Component } from 'react';
-import '../../estilos/BodyLanding.css';
+
+//imagenes
 import logo from '../../imagenes/logo.png';
 import iconUser from '../../imagenes/iconusuario.png';
+
+//Estilos
+import '../../estilos/BodyLanding.css';
+import '../../estilos/navLateral.css';
+
+//componentes
+import TablaReservas from '../cliente/TablaReservas';
+import PerfilPropietario from '../propietario/PerfilPropietario';
 
 class PortalPropietario extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show:'usuarios'
+            show: 'historial',
+            usuarios:'2'
         }
         this.navPortal = this.navPortal.bind(this);
+        this.handleChangeLogin = this.handleChangeLogin.bind(this);
+    }
+
+    handleChangeLogin(event) {
+        const target = event.target;
+        const valor = target.value;
+        const nombreCampo = target.name;
+
+        this.setState({
+            [nombreCampo]: valor
+        });
     }
 
     navPortal(dato){
@@ -19,40 +40,55 @@ class PortalPropietario extends Component {
     }
     
     render() {
-        if (this.state.show === 'home') {
-            //this.componente = <Home/>
+        if (this.state.show === 'historial') {
+            this.componente = <TablaReservas/>
         }
-        else if (this.state.show === 'destinos') {
-            //this.componente = <Destinos />
-        }
-        else if (this.state.show === 'contactos') {
-            //this.componente = <Contactos />
-        }
-        else if (this.state.show === 'usuarios') {
-            //this.componente = <Usuarios />
+        else if (this.state.show === 'perfil') {
+            this.componente = <PerfilPropietario/>
         }
         return (
             
             <Fragment>
-                <header>
+                <header id="secCabecera" className='mx-0'>
                     {/* <Cabecera></Cabecera> */}
-                    <div className='row'>
-                        <div className='cabecera col-sm'>
+                    <div className='row '>
+                        <div className='cabecera col-sm '>
                             <img src={logo} alt="logo" width='35%' />
                             <h2 className='pt-4 ml-3'>Los mejores alquileres a los mejores precios</h2>
                         </div>
                         <div className='d-flex flex-row-reverse align-items-end col-sm'>
-                            <a onClick={() => this.navPortal('contactos')}className='rutasPage mr-0 text-dark'>Contactos</a>
-                            <a onClick={() => this.navPortal('destinos')} className=' rutasPage mx-3 text-dark'>Destinos</a>
-                            <a onClick={() => this.navPortal('home')} className='rutasPage mx-3 text-dark'>Home</a>
+                            <div className='espacio mb-3'>
+                                <select className='bordear py-1 m-0 border-1 px-3' value={this.state.usuarios}
+                                    onChange={this.handleChangeLogin} type="text"
+                                    name='usuarios' required >
+                                    <option>Usuario</option>
+                                    <option value="1">Administador</option>
+                                    <option value="2">Propietario</option>
+                                    <option value="3">Cliente</option>
+                                </select >
+                            </div>
                         </div>
                         <div className='d-flex align-items-center col-1'>
-                            <a onClick={() => this.navPortal('usuarios')} className='pb-3'><img src={iconUser} alt="logo" width='80%'></img></a>
+                            <a onClick={() => this.navPortal('usuarios')} className='pb-3' href="#"><img src={iconUser} alt="logo" width='80%'></img></a>
                         </div>
                     </div>
                 </header>
-                <section className='mx-0'>
-                        {/* {this.componente} */}
+                <section id="trazo" className='mx-0'>
+                    <input type='checkbox' id="check"></input>
+                    <label for='check'>
+                        <i className='fas fa-bars' id="btn"></i>
+                        <i className='fas fa-times' id="cancel"></i>
+                    </label>
+                    <div className=' sidebar'>
+                        <header className='p-2 m-2 '></header>
+                        <ul>
+                            <li><a onClick={() => this.navPortal('historial')} href="#"><i className='fas fa-file-invoice-dollar'></i>Historial Pagos</a></li>
+                            <li><a onClick={() => this.navPortal('perfil')} href="#"><i className='fas fa-user'></i>Perfil</a></li>
+                        </ul>
+                    </div>
+                    <section id="frontera">
+                        {this.componente}
+                    </section>
                 </section>
             </Fragment>
         );
